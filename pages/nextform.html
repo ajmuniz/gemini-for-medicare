@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milly Medicare Tool</title>
+</head>
+<body>
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/"" id="navbar-logo">Milly</a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="/" class="navbar-links"> Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="./pages/about.html" class="navbar-links"> About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/" class="navbar-links"> Resources</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header">
+        <h1> Say Hello To 
+            <br>
+            <div class="milly-logo"> 
+                Milly
+            </div>
+        </h1> 
+        <h2> Your Personal Medicare Assistant </h2>
+        <p> Milly estimates the best Medicare <br> plans* based on your health needs.</p>
+
+        <div class="fixed-image">
+            <img src="../img/elders.jpg" alt="Doctor and Patient" height="300" width="300">
+        </div>
+    </div>
+
+
+   
+     <!-- Form -->
+        <div class="form-wrapper">
+            <div class="intro"> <h2>Part Two</h2> </div>
+            <div class="instructions">
+                <h3> Instructions: </h3>
+                <p>Please continue completing the form to the best of your knowledge. Press submit when you are ready to see your results. </p>
+                <p>To have a prompt read allowed to you, press the  <i class="fa-solid fa-volume-high"> </i> button. </p>
+
+                <p>You may type your response or record your answer using the  <i class="fa-solid fa-microphone"></i> button and 
+                    stop recording using the <i class="fa-solid fa-microphone-slash"></i> button. </p><br>
+            </div>
+
+            <!-- Questionaire Part 2 Begins Here -->
+            <form class="questionaire" action="../pages/results.html">
+                
+                <!-- Q1 -->
+                <div class="question">
+                    <label for="medications">Prescription Drug Medications</label>
+                    <button type="button" onclick="textToSpeech()"> <i class="fa-solid fa-volume-high"> </i> </button>
+                    <br><br>
+                    <input type="text" id="medications" name="medications" placeholder="Type your answer here">
+
+                    <!-- Repeat code for each question -->
+                    <button type="button" id="start-record-btn"><i class="fa-solid fa-microphone"></i>Start</button>
+                    <button type="button" id="stop-record-btn" disabled><i class="fa-solid fa-microphone-slash"></i>Stop</button>
+                    <input type="file" id="audio-file" name="audio_file" style="display: none;">
+                    <audio id="audio-playback" controls style="display: none;"></audio>
+                </div>
+                <br><br>
+                <!-- Q2 -->
+                <div class="question">
+                    <label for="primary_phys">Primary Care Physician<br> (If none write "none")</label>
+                    <button type="button" onclick="textToSpeech()"> <i class="fa-solid fa-volume-high"> </i> </button>
+                    <br><br>
+                    <input type="text" id="primary_phys" name="primary_phys" placeholder="Type your answer here">
+
+                     <!-- Repeat code for each question -->
+                    <button type="button" id="start-record-btn"><i class="fa-solid fa-microphone"></i>Start</button>
+                    <button type="button" id="stop-record-btn" disabled><i class="fa-solid fa-microphone-slash"></i>Stop</button>
+                    <input type="file" id="audio-file" name="audio_file" style="display: none;">
+                    <audio id="audio-playback" controls style="display: none;"></audio>
+                </div>
+                <br><br>
+                <!-- Q3 -->
+                <div class="question">
+                    <label for="pharmacy">Preferred Pharmacy</label>
+                    <button type="button" onclick="textToSpeech()"> <i class="fa-solid fa-volume-high"> </i> </button>
+                    <br><br>
+                    <input type="text" id="pharmacy" name="pharmacy" placeholder="Type your answer here">
+
+             
+                     <!-- Repeat code for each question -->
+                    <button type="button" id="start-record-btn"><i class="fa-solid fa-microphone"></i>Start</button>
+                    <button type="button" id="stop-record-btn" disabled><i class="fa-solid fa-microphone-slash"></i>Stop</button>
+                    <input type="file" id="audio-file" name="audio_file" style="display: none;">
+                    <audio id="audio-playback" controls style="display: none;"></audio>
+                </div>
+                <br><br>
+                <!-- Q4 -->
+                <div class="question">
+                    <label for="chronic_cond">Chronic Conditions</label>
+                    <button type="button" onclick="textToSpeech()"> <i class="fa-solid fa-volume-high"> </i> </button>
+                    <br><br>
+                    <input type="text" id="chronic_cond" name="chronic_cond" placeholder="Type your answer here">
+
+                     <!-- Repeat code for each question -->
+                    <button type="button" id="start-record-btn"><i class="fa-solid fa-microphone"></i>Start</button>
+                    <button type="button" id="stop-record-btn" disabled><i class="fa-solid fa-microphone-slash"></i>Stop</button>
+                    <input type="file" id="audio-file" name="audio_file" style="display: none;">
+                    <audio id="audio-playback" controls style="display: none;"></audio>
+                </div>
+                <br><br>
+                <!-- Q5 -->
+                <div class="question">
+                    <label for="med_covg">Are you covered by Medicaid?</label>
+                    <button type="button" onclick="textToSpeech()"> <i class="fa-solid fa-volume-high"> </i> </button>
+                    <br><br>
+                    <input type="text" id="med_covg" name="med_covg" placeholder="Type your answer here">
+
+                     <!-- Repeat code for each question -->
+                    <button type="button" id="start-record-btn"><i class="fa-solid fa-microphone"></i>Start</button>
+                    <button type="button" id="stop-record-btn" disabled><i class="fa-solid fa-microphone-slash"></i>Stop</button>
+                    <input type="file" id="audio-file" name="audio_file" style="display: none;">
+                    <audio id="audio-playback" controls style="display: none;"></audio>
+                </div>
+                <br><br>
+                <!-- Q6 -->
+                <div class="question">
+                    <label for="cancer">Do you have cancer?</label>
+                    <button type="button" onclick="textToSpeech()"> <i class="fa-solid fa-volume-high"> </i> </button>
+                    <br><br>
+                    <input type="text" id="cancer" name="cancer" placeholder="Type your answer here">
+
+                        <!-- Repeat code for each question -->
+                    <button type="button" id="start-record-btn"><i class="fa-solid fa-microphone"></i>Start</button>
+                    <button type="button" id="stop-record-btn" disabled><i class="fa-solid fa-microphone-slash"></i>Stop</button>
+                    <input type="file" id="audio-file" name="audio_file" style="display: none;">
+                    <audio id="audio-playback" controls style="display: none;"></audio>
+                </div>
+                <br><br>
+
+                <!-- Q7 -->
+                <div class="question">
+                    <label for="glasses">Do you wear glasses/ contacts?</label>
+                    <button type="button" onclick="textToSpeech()"> <i class="fa-solid fa-volume-high"> </i> </button>
+                    <br><br>
+                    <input type="text" id="glasses" name="glasses" placeholder="Type your answer here">
+
+                        <!-- Repeat code for each question -->
+                    <button type="button" id="start-record-btn"><i class="fa-solid fa-microphone"></i>Start</button>
+                    <button type="button" id="stop-record-btn" disabled><i class="fa-solid fa-microphone-slash"></i>Stop</button>
+                    <input type="file" id="audio-file" name="audio_file" style="display: none;">
+                    <audio id="audio-playback" controls style="display: none;"></audio>
+                </div>
+                <br><br>
+
+                <div class="submit-button">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <!-- Info Section -->
+    <div class="info">
+        <div class="info-section">
+            <h2>Why Milly?</h2>
+            <p> Milly is a personal medicare assistant that helps you find the best medicare plan for your needs. 
+             Milly uses a medicare API to access the Centers for Medicare & Medicaid Services public data that contains up to date medicare plans. <br><br>
+             The API only supports insurance plans for certain states. It does not support the following
+             states: CA, CO, CT, DC, ID, KT, ME, MD, MA ,MN, NV, NJ, NM, NY, PA, RI, VT, VA, WA  </p>
+       </div>
+
+
+        <div class="disclaimer-section"> 
+            <h2>Disclaimer</h2> 
+            <p>
+            This form is not intended as a replacement for medical advice of any kind. 
+            Any information given as a response from Gemini is purely informational and 
+            based on data from <a href="https://www.cms.gov/" target="_blank"> Centers for Medicare 
+            & Medicaid Services</a> public data.
+            We encourage you to consult with a healthcare professional or insurance broker 
+            for personalized advice.
+            </p>
+        </div>
+    </div>
+
+    
+
+
+  </body>
+  <footer> 
+    <p> Home | About | Privacy Policy </p>
+  </footer>
+</html>
